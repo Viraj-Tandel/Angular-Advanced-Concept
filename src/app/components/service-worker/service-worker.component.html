@@ -1,0 +1,54 @@
+<div class="container-fluid service-worker-wrapper">
+  <div class="row d-flex justify-content-evenly align-items-center vh-100 xx">
+    <div class="col-md-4">
+      <div class="table-wrapper">
+        <h4>Todo List (<span class="text-danger">No cache</span>)</h4>
+        <table>
+          <thead>
+          <tr>
+            <th>User ID</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Completed</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let todo of todoList">
+            <td>{{ todo.userId }}</td>
+            <td>{{ todo.id }}</td>
+            <td>{{ todo.title }}</td>
+            <td>{{ todo.completed ? 'Yes' : 'No' }}</td>
+          </tr>
+          <tr *ngIf="todoList.length == 0"><td colspan="4"><p class="text-center"><strong>To do list is empty!!!!</strong></p></td></tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="table-wrapper">
+        <h4>Product List (<span class="text-danger">API result is cached using server worker</span>)</h4>
+        <table>
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let product of productList">
+            <td>{{ product.id }}</td>
+            <td>{{ product.title }}</td>
+            <td>{{ product.price | currency }}</td>
+            <td>{{ product.category }}</td>
+          </tr>
+          <tr *ngIf="productList.length == 0"><td colspan="4"><p class="text-center"><strong>Product list is empty!!!!</strong></p></td></tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>

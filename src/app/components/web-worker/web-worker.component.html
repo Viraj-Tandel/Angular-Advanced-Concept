@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <div class="center">
+                <h2><span class="text-danger">Without</span> Web Worker</h2>
+                <button class="btn btn-light" (click)="handleLongOperation(false)">Do Long Operation</button>
+                <div class="container">
+                  <div [style.transform]="sliderTranslate" class="slider"></div>
+                </div>
+                <p>
+                  Counter Value {{ result }}
+                </p>
+              </div>
+        </div>
+        <div class="col d-flex justify-content-center">
+            <div class="center">
+                <h2><span class="text-dark">With</span> Web Worker	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;</h2>
+                <button class="btn btn-light" (click)="handleLongOperation(true)">Do Long Operation</button>
+                <div class="container">
+                  <div [style.transform]="sliderTranslate" class="slider"></div>
+                </div>
+                <p>
+                  Counter Value {{ resultWebWorker }}
+                </p>
+              </div>
+        </div>
+    </div>
+</div>
